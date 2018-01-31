@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "634049256390",
+    "firebase_url": "https://proofofconcept-5dede.firebaseio.com",
+    "project_id": "proofofconcept-5dede",
+    "storage_bucket": "proofofconcept-5dede.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634049256390:android:296ca1ff8aa23ce8",
+        "android_client_info": {
+          "package_name": "by.project.dartlen.proofofconcept"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634049256390-j422oaqdekbkfrb5s7q2e0u96f25ahfd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "by.project.dartlen.proofofconcept",
+            "certificate_hash": "9c1e201b8bd90ace3eb65b1ba46438a15910141d"
+          }
+        },
+        {
+          "client_id": "634049256390-u79rvsr2bb6u4kp1h2kc8iua43v8j18o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmG-UN2kivIb67P7oXuEqevyQ3PuVVRkM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634049256390-u79rvsr2bb6u4kp1h2kc8iua43v8j18o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
