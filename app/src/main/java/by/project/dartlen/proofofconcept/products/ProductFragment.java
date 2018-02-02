@@ -77,6 +77,7 @@ public class ProductFragment extends Fragment implements ProductContract.View {
         int id = item.getItemId();
 
         if (id == R.id.menu_login) {
+            mProductPresenter.signInClicked();
             return true;
         }
 

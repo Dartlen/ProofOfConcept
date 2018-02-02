@@ -52,13 +52,16 @@ public class MainActivity extends AppCompatActivity {
                     if(mProductFragment == null) {
                         mProductFragment = ProductFragment.newInstance();
                         mProductPresenter = new ProductPresenter(mProductRepository, mProductFragment, mAuth);
-                        return mProductFragment;
                     }
                     return mProductFragment;
                 case "login":
-                    if(mProductFragment == null)
-                        return LoginFragment.newInstance();
+                    if(mLoginFragment == null) {
+                        mLoginFragment = LoginFragment.newInstance();
+                        mLoginPresenter = new LoginPresenter(mLoginFragment, mAuth);
+                    }
                     return mLoginFragment;
+                case "admin":
+                    return null;
 
                 default:
                     throw new RuntimeException("Unknown screen key!");

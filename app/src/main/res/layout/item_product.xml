@@ -32,7 +32,9 @@
                 android:paddingLeft="@dimen/title_padding"
                 android:paddingRight="@dimen/title_padding"
                 android:paddingTop="@dimen/title_padding"
-                android:textSize="@dimen/title" />
+                android:text="name_product"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/price"
@@ -40,19 +42,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/name"
-                android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingLeft="@dimen/title_padding"
                 android:paddingRight="@dimen/title_padding"
+                android:text="price"
                 android:textSize="@dimen/songs_count" />
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/price"
-                android:textSize="@dimen/title" />
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingLeft="@dimen/title_padding"
+                android:paddingRight="@dimen/title_padding"
+                android:text="description"
+                android:textSize="14sp" />
 
 
         </RelativeLayout>

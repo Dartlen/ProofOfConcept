@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
+import by.project.dartlen.proofofconcept.App;
 import by.project.dartlen.proofofconcept.data.ProductRepository;
 import by.project.dartlen.proofofconcept.data.model.Product;
 import by.project.dartlen.proofofconcept.data.remote.GetProductsCallback;
@@ -43,5 +44,10 @@ public class ProductPresenter implements ProductContract.Presenter {
 
             }
         });
+    }
+
+    @Override
+    public void signInClicked() {
+        App.INSTANCE.getRouter().navigateTo("login");
     }
 }

@@ -32,10 +32,6 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     public ProductViewHolder create(@NonNull Context context) {
         View view = View.inflate(context, R.layout.item_product, null);
 
-        //ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        //ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-        //imageView.requestLayout();
-
         return new ProductViewHolder(view);
     }
 
@@ -62,6 +58,4 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
                     }
                 });
     }
-
-
 }
