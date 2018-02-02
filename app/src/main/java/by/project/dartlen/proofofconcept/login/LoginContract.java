@@ -20,5 +20,6 @@ public interface LoginContract {
     interface Presenter extends BasePresenter{
         void onClickedSignIn(String login, String password);
         void signInCompleted(@NonNull Task<AuthResult> task);
+        void onClickedBack();
     }
 }

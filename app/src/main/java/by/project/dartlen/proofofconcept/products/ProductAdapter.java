@@ -29,7 +29,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         ProductViewHolder vh = (ProductViewHolder) holder;
         vh.bind(ProductList.get(position).getUrl());
         vh.name.setText(ProductList.get(position).getName());
-        vh.description.setText(ProductList.get(position).getDescription());
+        if(ProductList.get(position).getDescription().length()<15)
+            vh.description.setText(ProductList.get(position).getDescription());
+        else
+            vh.description.setText(ProductList.get(position).getDescription().substring(0,15)+"...");
         vh.price.setText(ProductList.get(position).getPrice().toString());
     }
 

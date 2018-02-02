@@ -64,4 +64,9 @@ public class LoginPresenter implements LoginContract.Presenter {
             mLoginView.showDialog("Authentication failed.");
         }
     }
+
+    @Override
+    public void onClickedBack() {
+        App.INSTANCE.getRouter().navigateTo("product");
+    }
 }

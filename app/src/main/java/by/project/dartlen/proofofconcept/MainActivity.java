@@ -7,10 +7,14 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import by.project.dartlen.proofofconcept.admin.AdminProductFragment;
+import by.project.dartlen.proofofconcept.admin.AdminProductPresenter;
 import by.project.dartlen.proofofconcept.data.ProductRepository;
 import by.project.dartlen.proofofconcept.data.remote.ProductRemoteData;
 import by.project.dartlen.proofofconcept.login.LoginFragment;
 import by.project.dartlen.proofofconcept.login.LoginPresenter;
+import by.project.dartlen.proofofconcept.newproduct.NewProductFragment;
+import by.project.dartlen.proofofconcept.newproduct.NewProductPresenter;
 import by.project.dartlen.proofofconcept.products.ProductFragment;
 import by.project.dartlen.proofofconcept.products.ProductPresenter;
 import ru.terrakok.cicerone.Navigator;
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private LoginPresenter mLoginPresenter;
     private ProductRepository mProductRepository;
     private FirebaseAuth mAuth;
+    private AdminProductFragment mAdminProductFragment;
+    private AdminProductPresenter mAdminProductPresenter;
+    private NewProductFragment mNewProductFragment;
+    private NewProductPresenter mNewProductPresenter;
 
     @Override
     protected void onResume() {
@@ -61,7 +69,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return mLoginFragment;
                 case "admin":
-                    return null;
+                    if(mAdminProductFragment == null) {
+                        mAdminProductFragment = AdminProductFragment.newInstance();
+                        mAdminProductPresenter = new AdminProductPresenter(mProductRepository, mAdminProductFragment, mAuth);
+                    }
+                    return mAdminProductFragment;
+                case "newproduct":
+                    if(mNewProductFragment == null) {
+                        mNewProductFragment = NewProductFragment.newInstance();
+                        mNewProductPresenter = new NewProductPresenter(mProductRepository, mNewProductFragment);
+                    }
+                    return mNewProductFragment;
 
                 default:
                     throw new RuntimeException("Unknown screen key!");

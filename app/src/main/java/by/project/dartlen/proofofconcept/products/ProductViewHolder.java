@@ -4,13 +4,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
-import com.squareup.picasso.NetworkPolicy;
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,8 +40,8 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     public void bind(@NonNull String url) {
         App.INSTANCE.getPicasso()
                 .load(url)
-                .resize(250,250)
-                .centerCrop()
+                //.resize(350,350)
+                //.centerCrop()
                 .error(R.drawable.ic_no_image)
                 .into(imageView, new Callback() {
                     @Override

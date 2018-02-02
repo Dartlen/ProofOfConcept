@@ -1,9 +1,7 @@
 package by.project.dartlen.proofofconcept.login;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
@@ -18,15 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import by.project.dartlen.proofofconcept.App;
 import by.project.dartlen.proofofconcept.R;
 
 import static com.google.android.gms.common.internal.zzbq.checkNotNull;
@@ -85,7 +78,7 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                App.INSTANCE.getRouter().navigateTo("product");
+                mPresenter.onClickedBack();
                 return true;
         }
 
