@@ -67,6 +67,10 @@ public class ProductFragment extends Fragment implements ProductContract.View {
 
         mAdapter = new ProductAdapter();
         recyclerView.setAdapter(mAdapter);
+
+        ItemClickSupport.addTo(recyclerView)
+                .setOnItemClickListener((recyclerView, position, v) -> mProductPresenter.onItemClicked(position));
+
         mProductPresenter.start();
         return root;
     }

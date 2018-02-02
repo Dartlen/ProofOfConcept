@@ -13,6 +13,8 @@ import by.project.dartlen.proofofconcept.data.ProductRepository;
 import by.project.dartlen.proofofconcept.data.remote.ProductRemoteData;
 import by.project.dartlen.proofofconcept.login.LoginFragment;
 import by.project.dartlen.proofofconcept.login.LoginPresenter;
+import by.project.dartlen.proofofconcept.moreinfoproduct.MoreInfoProductFragment;
+import by.project.dartlen.proofofconcept.moreinfoproduct.MoreInfoProductPresenter;
 import by.project.dartlen.proofofconcept.newproduct.NewProductFragment;
 import by.project.dartlen.proofofconcept.newproduct.NewProductPresenter;
 import by.project.dartlen.proofofconcept.products.ProductFragment;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private AdminProductPresenter mAdminProductPresenter;
     private NewProductFragment mNewProductFragment;
     private NewProductPresenter mNewProductPresenter;
+    private MoreInfoProductFragment mMoreInfoProductFragment;
+    private MoreInfoProductPresenter mMoreInfoProductPresenter;
 
     @Override
     protected void onResume() {
@@ -80,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
                         mNewProductPresenter = new NewProductPresenter(mProductRepository, mNewProductFragment);
                     }
                     return mNewProductFragment;
+                case "moreinfo":
+                    if(mMoreInfoProductFragment == null) {
+                        mMoreInfoProductFragment = MoreInfoProductFragment.newInstance();
+
+                    }
+                    mMoreInfoProductPresenter = new MoreInfoProductPresenter(mProductRepository, mMoreInfoProductFragment, mAuth, data);
+                    return mMoreInfoProductFragment;
 
                 default:
                     throw new RuntimeException("Unknown screen key!");

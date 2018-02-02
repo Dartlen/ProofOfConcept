@@ -1,7 +1,9 @@
 package by.project.dartlen.proofofconcept.products;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         else
             vh.description.setText(ProductList.get(position).getDescription().substring(0,15)+"...");
         vh.price.setText(ProductList.get(position).getPrice().toString());
+
     }
 
     public void add(Product r) {

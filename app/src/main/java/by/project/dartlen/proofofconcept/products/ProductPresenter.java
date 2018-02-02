@@ -18,6 +18,7 @@ public class ProductPresenter implements ProductContract.Presenter {
     private ProductRepository mProductRepository;
     private ProductContract.View mProductView;
     private FirebaseAuth mAuth;
+    private List<Product> dataList;
 
     public ProductPresenter(@NonNull ProductRepository productRepository, @NonNull ProductContract.View productView,
                             @NonNull FirebaseAuth firebaseAuth){
@@ -36,6 +37,7 @@ public class ProductPresenter implements ProductContract.Presenter {
         mProductRepository.getProducts(new GetProductsCallback() {
             @Override
             public void onProductsDataLoaded(List<Product> dataProducts) {
+                dataList = dataProducts;
                 mProductView.showProducts(dataProducts);
             }
 
@@ -49,5 +51,10 @@ public class ProductPresenter implements ProductContract.Presenter {
     @Override
     public void signInClicked() {
         App.INSTANCE.getRouter().navigateTo("login");
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+        App.INSTANCE.getRouter().navigateTo("moreinfo", (Object)dataList.get(position));
     }
 }

@@ -9,7 +9,7 @@ import by.project.dartlen.proofofconcept.data.model.Product;
 public interface ProductContract {
     interface Presenter extends BasePresenter{
         void signInClicked();
-
+        void onItemClicked(int position);
     }
     interface View extends BaseView<ProductContract.Presenter>{
         void showProducts(List<Product> data);

@@ -84,6 +84,7 @@ public class NewProductFragment extends Fragment implements NewProductContract.V
 
         btnChooseImage.setOnClickListener(v->mNewProductPresenter.onClickedChooseImage());
         btnUpload.setOnClickListener(v->mNewProductPresenter.onClickedUpload());
+
         return root;
     }
 
